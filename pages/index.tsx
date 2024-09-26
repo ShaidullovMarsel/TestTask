@@ -2,19 +2,16 @@ import { Button } from "@/components";
 import { Htag } from "@/components/Htag/Htag";
 import { P } from "@/components/P/P";
 import { Tag } from "@/components/Tag/Tag";
-import { useEffect, useState } from "react";
+import { Rating } from "@/components/Rating/Rating";
+import { useState } from "react";
 
 export default function Home() {
-	const [counter, setCounter] = useState<number>(0);
+	const [rating, setRating] = useState<number>(4);
 
-	useEffect(() => {
-		console.log('hello');
-	}, [counter]);
-	
 	return (
 		<>
-			<Htag tag='h1'>{counter}</Htag>
-			<Button appearance='primary' arrow="down" onClick={() => setCounter(x => x + 1)}>Кнопка</Button>
+			<Htag tag='h1'>sdf</Htag>
+			<Button appearance='primary' arrow="down">Кнопка</Button>
 			<Button appearance='ghost' arrow="right">Кнопка</Button>
 			<P size="s">small</P>
 			<P>mall</P>
@@ -23,6 +20,7 @@ export default function Home() {
 			<Tag size="s" href="/#">asd</Tag>
 			<Tag size="m" href="/#" color="green">asd</Tag>
 			<Tag size="m" href="/#" color="primary">asd</Tag>
+			<Rating rating={rating} isEditable setRating={setRating}></Rating>
 		</>
 	)
 }
