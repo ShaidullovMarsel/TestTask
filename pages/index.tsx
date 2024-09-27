@@ -4,13 +4,14 @@ import { P } from "@/components/P/P";
 import { Tag } from "@/components/Tag/Tag";
 import { Rating } from "@/components/Rating/Rating";
 import { useState } from "react";
+import { withLayout } from "@/layout/Layout";
 
-export default function Home() {
+function Home() {
 	const [rating, setRating] = useState<number>(4);
 
 	return (
 		<>
-			<Htag tag='h1'>sdf</Htag>
+			<Htag tag='h1'>Заголовок</Htag>
 			<Button appearance='primary' arrow="down">Кнопка</Button>
 			<Button appearance='ghost' arrow="right">Кнопка</Button>
 			<P size="s">small</P>
@@ -24,3 +25,5 @@ export default function Home() {
 		</>
 	)
 }
+
+export default withLayout(Home);
